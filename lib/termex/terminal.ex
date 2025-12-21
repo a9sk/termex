@@ -1,6 +1,6 @@
-defmodule ExTerm.Terminal do
+defmodule Termex.Terminal do
   @moduledoc """
-  This module contains the public API for the ExTerm minimal terminal wrapper.
+  This module contains the public API for the Termex minimal terminal wrapper.
   """
 
   @doc """
@@ -28,14 +28,14 @@ defmodule ExTerm.Terminal do
   end
 
   @doc """
-  Write text calling ExTerm.ANSI for formatting.
+  Write text calling Termex.ANSI for formatting.
   """
   def write(text) do
 	IO.write(text)
   end
 
   @doc """
-  Clear screen using ExTerm.ANSI.clear_screen.
+  Clear screen using Termex.ANSI.clear_screen.
   """
   def clear do
 	IO.write("\e[2J\e[H")

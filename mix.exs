@@ -1,19 +1,19 @@
-defmodule ExTerm.MixProject do
+defmodule Termex.MixProject do
   use Mix.Project
 
-  @source "https://github.com/a9sk/exterm"
+  @source "https://github.com/a9sk/termex"
   @version "0.1.0"
   
   def project do
     [
-      app: :exterm,
+      app: :termex,
 	  description: "A very very basic wrapper for terminal manipulation in Elixir",
 	  package: package(),
       version: @version,
       elixir: "~> 1.19",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-	  name: "ExTerm",
+	  name: "TermEx",
 	  source_url: @source
 	]
   end

@@ -5,5 +5,5 @@
 /tmp/
 erl_crash.dump
 *.ez
-exterm-*.tar
+termex-*.tar
 

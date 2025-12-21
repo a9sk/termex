@@ -1,4 +1,4 @@
-# ExTerm
+# termex
 
 A very very basic wrapper for terminal manipulation in Elixir.
 

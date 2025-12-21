@@ -1,6 +1,6 @@
 defmodule Demo do
-  alias ExTerm.Terminal
-  alias ExTerm.ANSI
+  alias Termex.Terminal
+  alias Termex.ANSI
   
   @x_start 10
   @y_start 10

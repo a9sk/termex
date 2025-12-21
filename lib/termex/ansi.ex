@@ -1,4 +1,4 @@
-defmodule ExTerm.ANSI do
+defmodule Termex.ANSI do
   @moduledoc """
   This module contains helpers for building a styled input.
 
@@ -57,13 +57,10 @@ defmodule ExTerm.ANSI do
   @doc """
   Resets all styles, i suggest using it as an after.
 
-  Called by ExTerm.Terminal.restore/0
+  Called by Termex.Terminal.restore/0
   """
   def reset(), do: "\e[0m"
   
-  @doc """
-  If the style is empty simply return the original text.
-  """
   def render(text, %__MODULE__{styles: []}) do
 	text
   end

@@ -85,5 +85,14 @@ defmodule Termex.Terminal do
 	end
   end
 
+  @doc """
+  Returns terminal size as {width, height}.
+  """
+  def size do
+	{:ok, cols} = :io.columns(:stdio)
+	{:ok, rows} = :io.rows(:stdio)
+	{cols, rows}
+  end
+
   
 end

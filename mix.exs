@@ -2,7 +2,7 @@ defmodule Termex.MixProject do
   use Mix.Project
 
   @source "https://github.com/a9sk/termex"
-  @version "0.1.0"
+  @version "0.1.1"
   
   def project do
     [

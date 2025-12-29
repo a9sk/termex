@@ -85,13 +85,32 @@ defmodule Termex.Terminal do
 	end
   end
 
+  @default_size {80, 24} 
+
   @doc """
   Returns terminal size as {width, height}.
   """
   def size do
-	{:ok, cols} = :io.columns(:stdio)
-	{:ok, rows} = :io.rows(:stdio)
-	{cols, rows}
+	if :prim_tty.isatty(:stdio) do
+      with {:ok, cols} <- :io.columns(:stdio),
+           {:ok, rows} <- :io.rows(:stdio) do
+		{cols, rows}
+      else
+		_ -> @default_size
+      end
+	else
+      @default_size
+	end
+  end
+
+  @doc """
+  Returns terminal size as {width, height} or the default if it can't be determined.
+  """
+  def size_or(default \\ @default_size) do
+	case {:io.columns(:stdio), :io.rows(:stdio)} do
+      {{:ok, cols}, {:ok, rows}} -> {cols, rows}
+      _ -> default
+	end
   end
 
   
